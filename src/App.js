@@ -1,37 +1,39 @@
 import TodoList from './components/TodoList';
-import React, { useState, useRef, useEffect} from 'react';
+import React, { useState,  useEffect} from 'react';
 import {v4 as uuidv4 } from 'uuid'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import TodoForm from './components/TodoForm';
 
 function App() {
   const [todos, setTodos] = useState(() => {
     return JSON.parse(localStorage.getItem("HOLD_TODO_LIST")) || []
   });
 
-  const todoNameRef = useRef();
+  // const todoNameRef = useRef();
 
   useEffect( () => {
     window.localStorage.setItem("HOLD_TODO_LIST", JSON.stringify(todos));
   }, [todos])
 
 
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value;
-    if (name === '') return ;
+  function handleAddTodo(name) {
+    setTodos( prevTodos => [...prevTodos, { id: uuidv4(), name: name, complete: false}])
+  }
 
-    setTodos( prevTodos => [...prevTodos, { id: uuidv4(), name: name, complete: false}]
-    )
-    // resets value in input
-    todoNameRef.current.value = null;
+  function handleUpdateTodo(id, name) {
+    setTodos( prevTodos => prevTodos.map(todo => (todo.id === id ? { ...todo, name: name } : todo)))
+  }
+
+
+  function handleDeleteTodo(id) {
+    setTodos( t => t.filter( (todo) => todo.id !== id));
   }
 
   return (
     <>
-      <h1 class = 'title'>TO-DO List</h1>
-      <div class = "form">
-        <input ref = {todoNameRef} type= 'text' placeholder='Enter to-do...'></input>
-        <button class = 'addTodo' onClick={handleAddTodo}>ADD</button>
-        <TodoList todos={todos}/>
+      <h1 className = 'title'>TO-DO List</h1>
+      <div className = "form">
+        <TodoForm editing = {false} handleAddTodo={handleAddTodo}/>
+        <TodoList handleDeleteTodo={handleDeleteTodo} handleUpdateTodo={handleUpdateTodo} todos={todos}/>
       </div>
     
     </>

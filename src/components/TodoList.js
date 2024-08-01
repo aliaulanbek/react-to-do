@@ -1,17 +1,16 @@
 import React from 'react'
 import Todo from './Todo'
 
-export default function TodoList({todos}) {
-
-  function handleRemoveTodo(index) {
-    
-  }
+export default function TodoList( props ) {
 
   return (
     <ul className='todo-container'>
-      {todos.toReversed().map( (todo, i) => {
+      {props.todos.toReversed().map( (todo) => {
         //needs a key for each component
-        return <Todo handleRemoveTodo= {handleRemoveTodo} key = {todo.id} todo = {todo}/>
+        return <Todo key = {todo.id} 
+                handleRemoveTodo= {() => props.handleDeleteTodo(todo.id)} 
+                handleUpdateTodo = {props.handleUpdateTodo} 
+                todo = {todo} />
       })}
     </ul>
   )
