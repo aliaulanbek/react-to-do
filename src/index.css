@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.title {
+  color: blue;
+  text-align: center;
+}
+
+.form {
+  text-align: center;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo {
+  display: flex;
+  list-style-position: inside;
+  justify-content: space-between;
+  width: 70%;
+  background-color: rgb(205, 228, 247);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
