@@ -4,8 +4,10 @@ import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
 import TodoForm from './TodoForm'
 
-export default function Todo( {todo, handleUpdateTodo, handleRemoveTodo}) {
+export default function Todo( {todo, handleUpdateTodo, handleRemoveTodo, toggleTodo}) {
   const [editing, setEditing] = useState(false);
+  const [todoClass, setTodoClass] = useState("todo-incomplete")
+
 
   function startEdit() {
     setEditing(true);
@@ -16,14 +18,23 @@ export default function Todo( {todo, handleUpdateTodo, handleRemoveTodo}) {
     handleUpdateTodo(todo.id, newName);
   }
 
+  const changeStyle = () => {
+    toggleTodo()
+    todo.complete ? setTodoClass('todo-complete') : setTodoClass('todo-incomplete');
+  }
+
   return (
     <>
     {
       editing ? 
       <TodoForm editing={true} initialVal = {todo.name} handleUpdateTodo={stopEdit} />
       :
-      <li className='todo'>
-        <div className='todoName'>{todo.name}</div>
+      <li className={todoClass} >
+        <div className ="">
+          <input type='checkbox' onChange={changeStyle}/>
+          {todo.name}
+        </div>
+
         <div className='icons'>
           <FontAwesomeIcon className='icon-edit' icon={faPenToSquare}  onClick={() => startEdit()}/>
           <FontAwesomeIcon icon={faTrash} onClick={handleRemoveTodo}/>
@@ -31,6 +42,5 @@ export default function Todo( {todo, handleUpdateTodo, handleRemoveTodo}) {
       </li>
     }
     </>
-    
   )
 }

@@ -1,43 +1,40 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* .title {
+  color: rgb(0, 0, 0);
+  /* text-align: center; 
+} */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-.title {
-  color: blue;
-  text-align: center;
+.everything {
+  display: flex;
+  font-family: 'Courier New', Courier, monospace;
+  flex-direction: column;
+  align-items: center;
+  /* width: 30%; */
+  background-color: rgb(229, 224, 219);
+  padding: 30px;
+  box-shadow: 10px 10px 15px 10px rgb(176, 175, 175) ;
 }
 
 .form {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.todo-container {
+.todo-list{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  /* border: 2px solid blue; */
+  padding-right: 50px;
+  row-gap: 7px;
 }
 
 .todo {
   display: flex;
-  list-style-position: inside;
   justify-content: space-between;
-  width: 70%;
-  background-color: rgb(205, 228, 247);
-  border-radius: 5px;
-  margin: 5px;
+  background-color: rgb(232, 244, 255);
+  border-radius: 10px;
   padding: 10px;
-  border: 1px solid black;
+  border: 2px solid rgb(74, 154, 228);
 }
 
 .icons {
@@ -45,17 +42,80 @@ code {
   gap: 10px;
 }
 
+.add-form {
+ /* border: 2px solid orange; */
+  display: flex;
+  column-gap: 5px;
+  /* justify-content: space-between; */
+}
+
+.add-input {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+.add-submit {
+  border: 1px solid rgb(5, 100, 5);
+  color: rgb(227, 229, 202);
+  background-color: rgb(74, 154, 228);
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  font-family: 'Courier New', Courier, monospace;
+} 
+
 .update-form {
   display: flex;
-  flex-direction: row;
-  width: 70%;
-  background-color: rgb(205, 228, 247);
-  border-radius: 5px;
-  margin: 5px;
+  flex-direction: row; 
+  background-color: rgb(232, 244, 255);
+  border-radius: 10px;
   padding: 10px;
-  border: 1px solid black;
+  border: 3px solid rgb(38, 36, 141);
+  gap: 5px;
 }
 
 .update-input {
-  background-color: rgb(205, 228, 247);
+  background-color: rgb(243, 245, 255);
+  border-radius: 5px;
+  border: 1px solid rgb(186, 186, 186);
+}
+
+.update-submit {
+  border: 1px solid rgb(5, 100, 5);
+  color: rgb(227, 229, 202);
+  background-color: rgb(88, 169, 91);
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.todo-complete {
+  text-decoration-line: line-through;
+  color: rgb(112, 112, 112);
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(225, 225, 225);
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid rgb(122, 122, 122);
+}
+
+.todo-incomplete {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(232, 244, 255);
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid rgb(74, 154, 228);
+}
+
+.clear-completed {
+  border-radius: 5px;
+  border: 1px solid rgb(206, 118, 118);
+  background-color: rgb(233, 195, 195);
+  width: max-content;
+  align-self: center;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
 }
