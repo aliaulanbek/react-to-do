@@ -4,7 +4,7 @@ body {
   align-items: center;
   min-height: 100vh; 
   margin: 0;
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(160, 160, 160);
   font-family: 'Poppins', sans-serif; 
 }
 
@@ -16,7 +16,7 @@ body {
   width: 400px;
   background-color: rgb(229, 224, 219);
   padding: 20px 10px 20px 10px;
-  box-shadow: 0px 0px 15px 5px rgb(176, 175, 175);
+  box-shadow: 0px 0px 15px 5px rgb(108, 108, 108);
 }
 
 .form {
