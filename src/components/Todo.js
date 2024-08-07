@@ -30,9 +30,9 @@ export default function Todo( {todo, handleUpdateTodo, handleRemoveTodo, toggleT
       <TodoForm editing={true} initialVal = {todo.name} handleUpdateTodo={stopEdit} />
       :
       <li className={todoClass} >
-        <div className ="">
+        <div>
           <input type='checkbox' onChange={changeStyle}/>
-          {todo.name}
+          <span className='todo-text'>{todo.name}</span>
         </div>
 
         <div className='icons'>

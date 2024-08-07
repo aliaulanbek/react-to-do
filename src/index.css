@@ -1,18 +1,22 @@
-/* .title {
-  color: rgb(0, 0, 0);
-  /* text-align: center; 
-} */
-
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  min-height: 100vh; 
+  margin: 0;
+  background-color: rgb(102, 102, 102);
+  font-family: 'Poppins', sans-serif; 
+}
 
 .everything {
   display: flex;
-  font-family: 'Courier New', Courier, monospace;
   flex-direction: column;
   align-items: center;
-  /* width: 30%; */
+  border-radius: 20px;
+  width: 400px;
   background-color: rgb(229, 224, 219);
-  padding: 30px;
-  box-shadow: 10px 10px 15px 10px rgb(176, 175, 175) ;
+  padding: 20px 10px 20px 10px;
+  box-shadow: 0px 0px 15px 5px rgb(176, 175, 175);
 }
 
 .form {
@@ -23,46 +27,42 @@
 .todo-list{
   display: flex;
   flex-direction: column;
-  /* border: 2px solid blue; */
-  padding-right: 50px;
+  list-style-type: none;
   row-gap: 7px;
-}
-
-.todo {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(232, 244, 255);
-  border-radius: 10px;
-  padding: 10px;
-  border: 2px solid rgb(74, 154, 228);
+  padding: 0;
 }
 
 .icons {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .add-form {
- /* border: 2px solid orange; */
   display: flex;
-  column-gap: 5px;
-  /* justify-content: space-between; */
+  align-self: center;
 }
 
 .add-input {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 10px;
+  font-size: 18px;
+  padding: 8px 10px 8px 10px;
+  border-radius: 15px 0px 0px 15px;
   border: none;
+  background-color: rgb(232, 244, 255);
+}
+
+.add-input:focus {
+  border: none; 
+  outline: none; 
 }
 
 .add-submit {
-  border: 1px solid rgb(5, 100, 5);
+  border: none;
   color: rgb(227, 229, 202);
   background-color: rgb(74, 154, 228);
-  border-radius: 10px;
+  font-size: 20px;
+  font-weight:bold;
+  border-radius: 0px 15px 15px 0px;
   padding: 5px 10px 5px 10px;
-  font-family: 'Courier New', Courier, monospace;
 } 
 
 .update-form {
@@ -71,51 +71,54 @@
   background-color: rgb(232, 244, 255);
   border-radius: 10px;
   padding: 10px;
-  border: 3px solid rgb(38, 36, 141);
-  gap: 5px;
+  border: 1px solid rgb(38, 36, 141);
 }
 
 .update-input {
   background-color: rgb(243, 245, 255);
-  border-radius: 5px;
+  border-radius: 15px 0px 0px 15px;
   border: 1px solid rgb(186, 186, 186);
+  padding-left: 5px;
+  width: 100%;
+}
+
+.update-input:focus {
+  outline: none;
 }
 
 .update-submit {
-  border: 1px solid rgb(5, 100, 5);
+  border: none;
   color: rgb(227, 229, 202);
   background-color: rgb(88, 169, 91);
-  border-radius: 10px;
   padding: 5px 10px 5px 10px;
-  font-family: 'Courier New', Courier, monospace;
+  border-radius: 0px 15px 15px 0px;
+}
+
+.todo-complete, .todo-incomplete {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .todo-complete {
   text-decoration-line: line-through;
   color: rgb(112, 112, 112);
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(225, 225, 225);
-  border-radius: 10px;
-  padding: 10px;
-  border: 2px solid rgb(122, 122, 122);
+  background-color: rgb(207, 207, 207);
 }
 
 .todo-incomplete {
-  display: flex;
-  justify-content: space-between;
   background-color: rgb(232, 244, 255);
-  border-radius: 10px;
-  padding: 10px;
-  border: 2px solid rgb(74, 154, 228);
+}
+
+.todo-text {
+  padding: 0px 10px 0px 5px;
 }
 
 .clear-completed {
   border-radius: 5px;
-  border: 1px solid rgb(206, 118, 118);
+  border: none;
   background-color: rgb(233, 195, 195);
-  width: max-content;
   align-self: center;
-  font-family: 'Courier New', Courier, monospace;
   padding: 5px;
 }
